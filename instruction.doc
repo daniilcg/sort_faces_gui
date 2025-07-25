@@ -1,0 +1,45 @@
+Face Sorter — Full Instructions (EN)
+
+What it does:
+* Detects and groups people in photos using face recognition
+* Works with various formats: JPG, PNG, BMP, TIFF, HEIC
+* Automatically copies images into subfolders per person:
+python-repl
+CopyEdit
+Person_1/
+Person_2/
+...
+
+How to install:
+Make sure you have Python installed.
+Install required libraries:
+bash
+CopyEdit
+pip install face_recognition opencv-python pillow tqdm scikit-learn pyheif pyheif_pillow_opener
+
+How to use:
+1. Run:
+bash
+CopyEdit
+python face_sorter_gui.py
+2. Choose:
+o Source folder (where the unsorted photos are)
+o Output folder (where sorted folders will be created)
+3. The program will:
+o Detect faces in all photos
+o Group similar faces together
+o Copy photos into folders (Person_1, Person_2, ...)
+
+Building as EXE (optional):
+If you want to make it portable:
+bash
+CopyEdit
+pip install pyinstaller
+pyinstaller --onefile --noconsole face_sorter_gui.py
+Then use the file from /dist/face_sorter_gui.exe.
+
+Note:
+* No internet required
+* Fully offline face clustering
+* Handles thousands of images (tested with 15,000+)
+
